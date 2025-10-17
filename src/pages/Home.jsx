@@ -1,8 +1,11 @@
 import React from "react";
 const Home = () => {
   return (
-    <div>
-      <h1 className="font-bold pt-16">home</h1>
+    <div className="pt-16 max-w-3xl mx-auto px-4">
+      <div className="bg-surface border border-border rounded-xl p-6">
+        <h1 className="font-bold text-3xl md:text-4xl text-primary">home</h1>
+        <h2 className="mt-2 text-secondary">somthing gibbrish </h2>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-
 import { useRef, useState } from "react";
 
 export const FloatingDock = ({ items, desktopClassName, mobileClassName }) => {
@@ -33,25 +32,23 @@ const FloatingDockMobile = ({ items, className }) => {
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{
                   opacity: 0,
                   y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
+                  transition: { delay: idx * 0.05 },
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
                 <a
                   href={item.href}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  className="flex h-10 w-10 items-center justify-center rounded-full 
+                             bg-neutral-900 hover:bg-neutral-800 
+                             dark:bg-neutral-900 dark:hover:bg-neutral-800 
+                             transition-colors duration-200" // 🧩 tweaked for black theme + hover same
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
+                  <div className="h-4 w-4 text-white">{item.icon}</div>
                 </a>
               </motion.div>
             ))}
@@ -60,9 +57,10 @@ const FloatingDockMobile = ({ items, className }) => {
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className="flex h-10 w-10 items-center justify-center rounded-full 
+                   bg-neutral-900 hover:bg-neutral-800 transition-colors duration-200" // 🧩 black theme for toggle
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconLayoutNavbarCollapse className="h-5 w-5 text-white" />
       </button>
     </div>
   );
@@ -75,7 +73,7 @@ const FloatingDockDesktop = ({ items, className }) => {
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-neutral-900",
+        "mx-auto hidden h-16 items-end gap-4 rounded-2xl  bg-neutral-900 px-4 pb-3 md:flex", // 🧩 dark black base color
         className
       )}
     >
@@ -91,18 +89,10 @@ function IconContainer({ mouseX, title, icon, href }) {
 
   let distance = useTransform(mouseX, (val) => {
     let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-
     return val - bounds.x - bounds.width / 2;
   });
 
-  //original transorm values
-  // let widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  // let heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-
-  // let widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
-  // let heightTransformIcon = useTransform(distance[-150, 0, 150],[20, 40, 20]);
-
-  // my customise
+  // 🧩 kept your custom size tweaks
   let widthTransform = useTransform(distance, [-80, 0, 80], [40, 55, 40]);
   let heightTransform = useTransform(distance, [-80, 0, 80], [40, 55, 40]);
   let widthTransformIcon = useTransform(distance, [-80, 0, 80], [20, 26, 20]);
@@ -118,7 +108,6 @@ function IconContainer({ mouseX, title, icon, href }) {
     stiffness: 150,
     damping: 12,
   });
-
   let widthIcon = useSpring(widthTransformIcon, {
     mass: 0.1,
     stiffness: 150,
@@ -139,7 +128,8 @@ function IconContainer({ mouseX, title, icon, href }) {
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center 
+                   rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors duration-200" // 🧩 black theme + hover effect
       >
         <AnimatePresence>
           {hovered && (
@@ -147,7 +137,8 @@ function IconContainer({ mouseX, title, icon, href }) {
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              className="absolute -top-8 left-1/2 w-fit rounded-md border border-neutral-700 
+                         bg-neutral-800 px-2 py-0.5 text-xs whitespace-pre text-white" // 🧩 tooltip styled for black theme
             >
               {title}
             </motion.div>
@@ -155,7 +146,7 @@ function IconContainer({ mouseX, title, icon, href }) {
         </AnimatePresence>
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center"
+          className="flex items-center justify-center text-white" // 🧩 icons visible on dark bg
         >
           {icon}
         </motion.div>
