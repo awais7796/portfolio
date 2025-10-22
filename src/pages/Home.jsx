@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+import Contact from "./Contact";
+import Projects from "./Projects";
 const Home = () => {
   return (
     <div className="  h-screen pt-5 flex flex-col justify-center items-center  gap-5">
@@ -21,6 +23,8 @@ const Home = () => {
           <ShimmerButton>get in touch </ShimmerButton>
         </Link>
       </div>
+      <Contact />
+      <Projects />
     </div>
   );
 };
