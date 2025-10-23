@@ -12,15 +12,15 @@ import {
 
 const Layout = () => {
   const dockItems = [
-    { title: "Home", href: "/", icon: <HomeIcon className="h-5 w-5" /> },
+    { title: "Home", href: "/#home", icon: <HomeIcon className="h-5 w-5" /> },
     {
       title: "Projects",
-      href: "/projects",
+      href: "/#projects",
       icon: <FolderGit2 className="h-5 w-5" />,
     },
     {
       title: "Contact",
-      href: "/contact",
+      href: "/#contact",
       icon: (
         <>
           <Mail className="h-5 w-5" />
