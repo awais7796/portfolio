@@ -1,8 +1,8 @@
-const InputBox = (label) => {
+const InputBox = ({ label, placeholder }) => {
   return (
     <div className="">
       {label}
-      <input type="text" name="" id="" />
+      <input type="text" placeholder={placeholder} />
     </div>
   );
 };
