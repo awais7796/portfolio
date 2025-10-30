@@ -4,11 +4,17 @@ import InputBox from "../components/ui/InputBox";
 
 const Contact = () => {
   return (
-    <div id="contact" className="flex flex-col pt-10 text-border">
-      <InputBox label="first name" placeholder="enter your name" />
+    <>
+      <div id="contact" className="">
+        <span>Say Hello</span>
 
-      <Button>Submit</Button>
-    </div>
+        <div className="flex flex-col gap-5">
+          <InputBox placeholder="johndeo@gmail.com" />
+          <InputBox placeholder="Type your message here " />
+          <Button>Submit</Button>
+        </div>
+      </div>
+    </>
   );
 };
 
