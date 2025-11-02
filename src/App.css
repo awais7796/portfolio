@@ -5,3 +5,10 @@
   /* text-align: center; */
   color: white;
 }
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 40;
+  font-style: normal;
+}

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { motion, useAnimate } from "motion/react";
 
-export const Button = ({ className, children, ...props }) => {
+export const StatefulButton = ({ className, children, ...props }) => {
   const [scope, animate] = useAnimate();
 
   const animateLoading = async () => {
