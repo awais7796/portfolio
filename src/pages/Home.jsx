@@ -20,13 +20,18 @@ const Home = () => {
     <div>
       <div className=" h-screen  pt-5 flex flex-col justify-center items-center  gap-5">
         <div>
-          <a href="d">leek here </a>
+          <img
+            src="public\dp.jpeg"
+            alt="dp"
+            className="w-32 h-32 rounded-full object-cover"
+          />
         </div>
         <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-          animi deserunt explicabo facilis nemo, voluptatem consequatur
-          dignissimos est similique tenetur dolorum officiis. Aspernatur minima
-          quisquam repellat architecto dolores vitae adipisci.\ lorem400
+          <p className="whitespace-pre-line text-lg leading-relaxed">
+            {`21, I move fast, break things, and make things happen.Knee-deep in code and computer science; I chase anything that pushes boundaries. History, curiosity, badminton, 
+          and great books built my core.Still on the grind for mastery.
+           If you’re working on something real, let’s talk.`}
+          </p>
         </div>
         <div className="flex justify-center items-center gap-5">
           <Link to="/#projects">
@@ -37,8 +42,8 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <Contact />
       <Projects />
+      <Contact />
     </div>
   );
 };
