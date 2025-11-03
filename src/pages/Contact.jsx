@@ -31,6 +31,31 @@ const Contact = () => {
   return (
     <>
       <div id="contact" className="h-screen ">
+        <div className=" flex flex-col justify-between items-center w-full">
+          <h2 className="mt-5 text-3xl font-bold mb-8 playfair-display">
+            Education
+          </h2>
+
+          <div className="max-w-4xl w-full flex items-center gap-5 mx-auto border-2 p-5 rounded-2xl ">
+            <div>
+              <img
+                className="h-12 w-12 rounded-full"
+                src="https://upload.wikimedia.org/wikipedia/en/4/42/Sant_Gadge_Baba_Amravati_University_logo.png"
+                alt="university logo"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <h3>Bachelor of Engineering in Information Technology</h3>
+              <h2>Sant Gagde Baba Amravati University</h2>
+            </div>
+
+            <div>
+              <h4>Sept 2025</h4>
+            </div>
+          </div>
+        </div>
+
         <h2 className="text-center playfair-display mt-5 text-3xl font-bold mb-8">
           Say Hello
         </h2>
