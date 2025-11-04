@@ -34,8 +34,14 @@ const Home = () => {
         </div>
 
         <div className="flex justify-center items-center gap-5">
-          <Link to="/#projects">
-            <ShimmerButton>Book a meet </ShimmerButton>
+          <Link>
+            <ShimmerButton
+              data-cal-namespace="book-meet"
+              data-cal-link="awais-khan-d2efil/30min"
+              data-cal-config='{"layout":"month_view"}'
+            >
+              Book a meet{" "}
+            </ShimmerButton>
           </Link>
           <Link to="/#contact">
             <ShimmerButton>get in touch </ShimmerButton>
