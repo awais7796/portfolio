@@ -16,6 +16,7 @@ const Home = () => {
       }
     }
   }, [location]);
+
   return (
     <>
       <div className=" h-screen  pt-5 flex flex-col justify-center items-center  gap-5">

@@ -3,7 +3,7 @@
 const Button = ({ url, label, SvgIcon, ...props }) => {
   const handleClick = () => {
     if (url) {
-      e.preventDefault();
+      // e.preventDefault();
       window.open(url, "_blank");
     }
   };
