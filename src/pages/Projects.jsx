@@ -11,8 +11,7 @@ const Projects = () => {
     },
     {
       title: "Coinnect -paytm clone",
-      description:
-        "make omentory transactions",
+      description: "make momentory transactions",
       tech: ["Python", "Node.js", "React"], // Technologies used in the project
       github: "https://github.com/awais7796/coinnect--paytm_clone-", // GitHub repo link
       demo: "https://demo.com", // Live demo link
@@ -79,7 +78,7 @@ const Projects = () => {
               <h3 className="text-xl font-semibold mb-3 playfair-display text-primary">
                 {project.title}
               </h3>
-              
+
               {/* Project description */}
               <p className="text-secondary mb-4 text-sm leading-relaxed flex-grow">
                 {project.description}

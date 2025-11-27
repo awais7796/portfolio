@@ -48,7 +48,7 @@ const Contact = () => {
           <h2 className="mt-5 text-3xl font-bold mb-8 playfair-display">
             Education
           </h2>
-
+          {/* //education */}
           <div className="max-w-4xl w-full flex justify-between mx-auto border-2 p-5 rounded-2xl ">
             <div className="flex gap-5">
               <div>
