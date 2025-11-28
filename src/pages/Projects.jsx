@@ -24,6 +24,13 @@ const Projects = () => {
       github: "https://github.com/awais7796/MensTalk", // GitHub repo link
       demo: "https://demo.com", // Live demo link
     },
+    {
+      title: "Encore",
+      description: "Portfolio of agency providing web base solutions",
+      tech: ["React", "AI", "Node.js"], // Technologies used in the project
+      github: "https://github.com/awais7796/encore", // GitHub repo link
+      demo: "https://encore-woad.vercel.app/", // Live demo link
+    },
   ];
 
   const GithubIcon = () => (
@@ -111,7 +118,7 @@ const Projects = () => {
                 {/* Demo button - opens live demo in new tab */}
                 {project.demo && (
                   <button
-                    onClick={() => window.open(project.demo, "_blank")} // Opens demo link in a new tab
+                    onClick={() => window.open(project.demo, "_blanck")} // Opens demo link in a new tab
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors text-sm font-medium"
                   >
                     <ExternalLinkIcon /> {/* External link SVG icon */}
