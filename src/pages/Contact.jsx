@@ -3,7 +3,7 @@ import { StatefulButton } from "@/components/ui/stateful-button";
 import InputBox from "../components/ui/InputBox";
 import Button from "@/components/ui/button";
 import { getCalApi } from "@calcom/embed-react";
-
+import EmailForm from "@/components/ui/EmailForm";
 const Contact = () => {
   useEffect(() => {
     (async function () {
@@ -87,7 +87,7 @@ const Contact = () => {
                 className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
                 label="Book a meet"
                 SvgIcon={MeetSvg}
-              ></Button>
+              ></Button> 
 
               <Button
                 label="dm on X"
@@ -97,7 +97,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="">
+          {/* <div className="">
             <div className="flex flex-col gap-5 w-full ">
               <h3 className="playfair-display">You can mail also </h3>
               <InputBox label="Email" placeholder="johndeo@gmail.com" />
@@ -108,7 +108,8 @@ const Contact = () => {
               />
               <StatefulButton>Submit</StatefulButton>
             </div>
-          </div>
+          </div> */}
+          <EmailForm/>
         </div>
       </div>
     </>
