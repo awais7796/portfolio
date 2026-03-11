@@ -49,7 +49,7 @@ const Contact = () => {
             Education
           </h2>
           {/* //education */}
-          <div className="max-w-4xl w-full flex justify-between mx-auto border-2 p-5 rounded-2xl ">
+          <div className="max-w-4xl w-full flex justify-between mx-auto border-2  hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-colors p-5 rounded-2xl ">
             <div className="flex gap-5">
               <div>
                 <img
