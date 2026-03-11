@@ -1,4 +1,4 @@
-const InputBox = ({ label, placeholder, height = "h-10" }) => {
+const InputBox = ({ label, placeholder, height = "h-10",value, onChange}) => {
   const isMessege = label.toLowerCase().includes("message");
   return (
     <>
@@ -10,11 +10,15 @@ const InputBox = ({ label, placeholder, height = "h-10" }) => {
             type="text"
             rows={10}
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
           />
         ) : (
           <input
             className={`w-full  border border-gray-200 rounded-xl p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-100 outline-none transition ${height}`}
             placeholder={placeholder}
+             value={value}
+            onChange={onChange}
           />
         )}
       </div>

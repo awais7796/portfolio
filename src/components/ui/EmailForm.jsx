@@ -2,6 +2,9 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import InputBox from "./InputBox";
 import {StatefulButton} from "./stateful-button";
+import toast from "react-hot-toast";
+
+
 
 
 const EmailForm = () => {
@@ -20,13 +23,16 @@ const EmailForm = () => {
         import.meta.env.VITE_PUBLIC_KEY // public key
       );
 
-      alert("Message sent successfully!");
+      // alert("Message sent successfully!");
+      toast.success("Message sent successfully!");
 
       setEmail("");
       setMessage("");
+
     } catch (error) {
       console.log(error);
-      alert("Failed to send message");
+      // alert("Failed to send message");
+      toast.error("Failed to send message");
     }
   };
 
